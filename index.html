@@ -341,19 +341,6 @@
     </div>
   </section>
 
-  <!-- Sponsors (optional) -->
-  <section id="sponsors" class="py-16">
-    <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-2xl font-bold">Sponsors</h2>
-      <div class="mt-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 items-center">
-        <img src="assets/sponsors/logo1.svg" alt="Sponsor 1" class="h-8 opacity-70" />
-        <img src="assets/sponsors/logo2.svg" alt="Sponsor 2" class="h-8 opacity-70" />
-        <img src="assets/sponsors/logo3.svg" alt="Sponsor 3" class="h-8 opacity-70" />
-        <img src="assets/sponsors/logo4.svg" alt="Sponsor 4" class="h-8 opacity-70" />
-      </div>
-    </div>
-  </section>
-
   <!-- Footer -->
   <footer class="py-10 border-t border-slate-200 dark:border-slate-800">
     <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6">
@@ -390,18 +377,5 @@
     themeToggle?.addEventListener('click', () => setTheme(!document.documentElement.classList.contains('dark')));
   </script>
 
-  <!--
-  ====================
-  HOW TO DEPLOY
-  --------------------
-  1) Create a GitHub repo named <username>.github.io (user/organization site) or any repo (project site).
-  2) Put this file as /index.html at the repo root.
-  3) Add an /assets/ folder with images (logo.svg, hero-illustration.svg, speaker/organizer photos, etc.).
-  4) Commit & push. In Settings → Pages, set the source to main branch / root (or /docs) and save.
-  5) Your site will be live at https://<username>.github.io/ (or https://<username>.github.io/<repo>/).
-
-  Customize text (dates, venue, CFP) directly in the HTML above.
-  ====================
-  -->
 </body>
 </html>
