@@ -1,20 +1,407 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Welcome to Active Perception Workshop</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Act to Sense to Act Better — ICRA 2026 Workshop</title>
+  <meta name="description" content="Act to Sense to Act Better — 1st Workshop on Learning and Representations for Active Perception in Manipulation at ICRA 2026, Vienna." />
+  <meta name="author" content="Your Name" />
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Active Perception Workshop" />
+  <meta property="og:description" content="Join us to explore sensing, action, and learning for embodied intelligence." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/social-card.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Tailwind via CDN (safe for GitHub Pages) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Tailwind config (optional: extend colors / fonts here)
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ["Inter", "system-ui", "-apple-system", "Segoe UI", "Roboto", "Ubuntu", "Cantarell", "Noto Sans", "sans-serif"],
+          },
+        }
+      },
+      darkMode: 'class'
+    }
+  </script>
+  <!-- Favicon (replace) -->
+  <link rel="icon" href="assets/favicon.svg" />
   <style>
-    body { font-family: sans-serif; margin: 2em; background: #f9f9f9; color: #222; }
-    h1 { color: #1a5fa2; }
-    .container { max-width: 600px; margin: auto; background: #fff; padding: 2em; border-radius: 8px; box-shadow: 0 2px 8px #ccc; }
-    a { color: #1a5fa2; }
+    /* Smooth scrolling for anchor links */
+    html { scroll-behavior: smooth; }
   </style>
 </head>
-<body>
-  <div class="container">
-    <h1>Welcome to Active Perception Workshop!</h1>
-    <p>This is the official GitHub Pages site for <b>Active Perception Workshop</b>.</p>
+<body class="bg-white text-slate-800 dark:bg-slate-950 dark:text-slate-200 font-sans">
+  <!-- Top Announcement Bar (optional) -->
+  <div class="bg-indigo-600 text-white text-sm">
+    <div class="max-w-7xl mx-auto px-4 py-2 text-center">
+      <!-- <strong>Call for Papers is open</strong> — Deadline: <span id="cfp-deadline">Dec 15, 2025</span> -->
+    </div>
   </div>
+
+  <!-- Nav -->
+  <header class="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-white/70 bg-white/90 dark:supports-[backdrop-filter]:bg-slate-950/70 dark:bg-slate-950/90 border-b border-slate-200/60 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex items-center justify-between h-16">
+        <a href="#home" class="flex items-center gap-2">
+          <!-- <img src="assets/logo.svg" alt="Workshop Logo" class="w-8 h-8" /> -->
+          <span class="font-semibold">Act to Sense to Act Better</span>
+        </a>
+        <nav class="hidden md:flex items-center gap-6 text-sm">
+          <a href="#about" class="hover:text-indigo-600">About</a>
+          <a href="#speakers" class="hover:text-indigo-600">Speakers</a>
+          <a href="#dates" class="hover:text-indigo-600">Important Dates</a>
+          <a href="#schedule" class="hover:text-indigo-600">Schedule</a>
+          <a href="#cfp" class="hover:text-indigo-600">Call for Papers</a>
+          <a href="#organizers" class="hover:text-indigo-600">Organizers</a>
+          <a href="#faq" class="hover:text-indigo-600">FAQ</a>
+          <a href="#register" class="inline-flex items-center rounded-full px-4 py-2 bg-indigo-600 text-white hover:bg-indigo-700">Register</a>
+          <button id="theme-toggle" aria-label="Toggle dark mode" class="p-2 rounded-lg border border-slate-200 dark:border-slate-800">
+            <span id="theme-icon">🌙</span>
+          </button>
+        </nav>
+        <button id="menu" class="md:hidden p-2 rounded-lg border border-slate-200 dark:border-slate-800" aria-label="Open menu">☰</button>
+      </div>
+    </div>
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="md:hidden hidden border-t border-slate-200 dark:border-slate-800">
+      <div class="px-4 py-3 space-y-2 text-sm">
+        <a href="#about" class="block">About</a>
+        <a href="#speakers" class="block">Speakers</a>
+        <a href="#dates" class="block">Important Dates</a>
+        <a href="#schedule" class="block">Schedule</a>
+        <a href="#cfp" class="block">Call for Papers</a>
+        <a href="#organizers" class="block">Organizers</a>
+        <a href="#faq" class="block">FAQ</a>
+        <a href="#register" class="block">Register</a>
+      </div>
+    </div>
+  </header>
+
+<!-- Hero -->
+<section id="home" class="relative overflow-hidden">
+<div class="max-w-4xl mx-auto px-4 py-24 lg:py-28 text-center">
+<h1 class="text-4xl md:text-6xl font-extrabold leading-tight">Act to Sense to Act Better</h1>
+<h2 class="mt-4 text-2xl md:text-3xl font-semibold text-indigo-600">1st Workshop on Learning and Representations for Active Perception in Manipulation</h2>
+<p class="mt-6 text-lg text-slate-600 dark:text-slate-300">Held at <span class="font-medium">ICRA 2026</span>, Vienna, Austria — <span class="font-medium">Full-day workshop</span>, 1–5 June 2026 (exact data TBA).</p>
+<div class="mt-8 flex flex-wrap justify-center gap-3">
+<a href="#register" class="inline-flex items-center rounded-full px-5 py-3 bg-indigo-600 text-white hover:bg-indigo-700">Register</a>
+<a href="#cfp" class="inline-flex items-center rounded-full px-5 py-3 border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-900">Submit Paper</a>
+</div>
+<!-- <p class="mt-4 text-sm text-slate-500 dark:text-slate-400">Hybrid participation available · Proceedings on OpenReview/ArXiv (TBD)</p> -->
+</div>
+</section>
+
+  <!-- About -->
+  <section id="about" class="py-20 border-t border-slate-200 dark:border-slate-800">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold">About</h2>
+      <p class="mt-4 text-slate-700 dark:text-slate-300">Manipulation in unstructured environments demands more than accurate sensing—it requires purposeful interaction to acquire the right information at the right time. <strong>Active perception</strong> integrates sensing actions into manipulation: reorienting objects to expose features, sweeping a wrist to disambiguate geometry, or applying controlled forces to infer material properties. These strategies are essential for dexterity, enabling robots to adapt grasps, refine motion plans, and cope with uncertainty during execution.</p>
+      <p class="mt-4 text-slate-700 dark:text-slate-300">This workshop focuses on three themes:</p>
+      <ul class="mt-4 list-disc pl-6 space-y-2 text-slate-700 dark:text-slate-300">
+        <li><strong>Multi-Modal Active Perception:</strong> Purposeful tactile, visual, and multi-modal exploration to improve grasping, in-hand manipulation, and environment understanding.</li>
+        <li><strong>Algorithmic and Formal Contributions:</strong> Uncertainty-aware control, information-theoretic action selection, and learning-based methods that integrate sensing with acting.</li>
+        <li><strong>Integrated Systems and Applications:</strong> Combining active perception with regrasping, navigation, and active reconstruction for real-world tasks.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Speakers -->
+  <section id="speakers" class="py-20">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex items-end justify-between">
+        <h2 class="text-3xl font-bold">Invited Speakers (Tentative)</h2>
+        <p class="text-sm text-slate-500">Final lineup TBA.</p>
+      </div>
+      <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <article class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6">
+          <!-- <img src="assets/speakers/bohg.jpg" alt="Jeannette Bohg" class="w-24 h-24 rounded-full object-cover" /> -->
+          <h3 class="mt-4 text-xl font-semibold">Jeannette Bohg</h3>
+          <p class="text-sm text-slate-500">Interactive Perception & Robot Learning Lab, Stanford University</p>
+          <p class="mt-3 text-sm"> <a href="https://web.stanford.edu/~bohg/" class="text-indigo-600">Website</a></p>
+        </article>
+        <article class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6">
+          <!-- <img src="assets/speakers/brock.jpg" alt="Oliver Brock" class="w-24 h-24 rounded-full object-cover" /> -->
+          <h3 class="mt-4 text-xl font-semibold">Oliver Brock</h3>
+          <p class="text-sm text-slate-500">Robotics & Biology Lab, TU Berlin</p>
+          <p class="mt-3 text-sm"> <a href="https://www.tu.berlin/en/robotics/about-rbo/prof-dr-oliver-brock" class="text-indigo-600">Website</a></p>
+        </article>
+        <article class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6">
+          <!-- <img src="assets/speakers/pinto.jpg" alt="Lerrel Pinto" class="w-24 h-24 rounded-full object-cover" /> -->
+          <h3 class="mt-4 text-xl font-semibold">Lerrel Pinto</h3>
+          <p class="text-sm text-slate-500">General-purpose Robotics & AI Lab, NYU</p>
+          <p class="mt-3 text-sm"><a href="https://www.lerrelpinto.com/" class="text-indigo-600">Website</a></p>
+        </article>
+        <article class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6">
+          <!-- <img src="assets/speakers/kragic.jpg" alt="Danica Kragic" class="w-24 h-24 rounded-full object-cover" /> -->
+          <h3 class="mt-4 text-xl font-semibold">Danica Kragić</h3>
+          <p class="text-sm text-slate-500">Royal Institute of Technology (KTH)</p>
+          <p class="mt-3 text-sm"> <a href="https://www.csc.kth.se/~danik/" class="text-indigo-600">Website</a></p>
+        </article>
+        <article class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6">
+          <!-- <img src="assets/speakers/lepora.jpg" alt="Nathan Lepora" class="w-24 h-24 rounded-full object-cover" /> -->
+          <h3 class="mt-4 text-xl font-semibold">Nathan Lepora</h3>
+          <p class="text-sm text-slate-500">University of Bristol / BRL</p>
+          <p class="mt-3 text-sm"> <a href="https://lepora.com/" class="text-indigo-600">Website</a></p>
+        </article>
+        <article class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6">
+          <!-- <img src="assets/speakers/doerschner.jpg" alt="Katja Dörschner-Boyaci" class="w-24 h-24 rounded-full object-cover" /> -->
+          <h3 class="mt-4 text-xl font-semibold">Katja Dörschner-Boyaci</h3>
+          <p class="text-sm text-slate-500">PACE Lab, Justus-Liebig-Universität Giessen</p>
+          <p class="mt-3 text-sm"><a href="http://www.doerschner.de/index.html" class="text-indigo-600">Website</a></p>
+        </article>
+        <article class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6">
+          <!-- <img src="assets/speakers/bandyopadhyay.jpg" alt="Tirthankar Bandyopadhyay" class="w-24 h-24 rounded-full object-cover" /> -->
+          <h3 class="mt-4 text-xl font-semibold">Tirthankar Bandyopadhyay</h3>
+          <p class="text-sm text-slate-500">CSIRO Data61</p>
+          <p class="mt-3 text-sm">. <a href="https://people.csiro.au/b/t/tirtha-bandy" class="text-indigo-600">Website</a></p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Important Dates -->
+  <section id="dates" class="py-20 bg-slate-50 dark:bg-slate-900/30 border-y border-slate-200 dark:border-slate-800">
+    <div class="max-w-5xl mx-auto px-4">
+      <h2 class="text-3xl font-bold">Important Info</h2>
+      <div class="mt-8 grid md:grid-cols-2 gap-8">
+        <ul class="space-y-4">
+          <li class="flex items-start gap-4">
+            <div class="h-10 w-10 rounded-full bg-indigo-600 text-white flex items-center justify-center">📍</div>
+            <div>
+              <div class="font-medium">Venue</div>
+              <div class="text-sm text-slate-500">ICRA 2026 · Vienna, Austria · Full-day (exact date TBA)</div>
+            </div>
+          </li>
+          <li class="flex items-start gap-4">
+            <div class="h-10 w-10 rounded-full bg-indigo-600 text-white flex items-center justify-center">🖥️</div>
+            <div>
+              <div class="font-medium">Format</div>
+              <div class="text-sm text-slate-500">Hybrid: in-person + livestream; talks, spotlights, posters, demos, panel</div>
+            </div>
+          </li>
+          <li class="flex items-start gap-4">
+            <div class="h-10 w-10 rounded-full bg-indigo-600 text-white flex items-center justify-center">🏆</div>
+            <div>
+              <div class="font-medium">Awards</div>
+              <div class="text-sm text-slate-500">Best Paper, Best Poster/Presentation, Best Video (with certificates & prizes)</div>
+            </div>
+          </li>
+        </ul>
+        <div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6">
+          <h3 class="font-semibold">Contact</h3>
+          <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Email the organisers: <a href="mailto:cristiana.farias@tu-darmstadt.de" class="text-indigo-600">cristiana.farias@tu-darmstadt.de</a>,</p>
+          <p class="mt-4 text-sm">Workshop website: <a href="https://active-perception-workshop.github.io/" class="text-indigo-600">active-perception-workshop.github.io</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+<!-- Schedule -->
+<section id="schedule" class="py-20 bg-gradient-to-b from-indigo-50 via-white to-indigo-50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-900">
+<div class="max-w-5xl mx-auto px-4">
+<h2 class="text-3xl font-bold text-center">Tentative Schedule</h2>
+<p class="mt-2 text-sm text-slate-600 dark:text-slate-400 text-center">Subject to change to fit the conference agenda and speaker availability.</p>
+<div class="mt-10 overflow-x-auto rounded-2xl shadow-lg border border-slate-200 dark:border-slate-800">
+<table class="min-w-full text-sm">
+<thead class="bg-indigo-600 text-white">
+<tr>
+<th class="text-left px-4 py-3 font-semibold">Time</th>
+<th class="text-left px-4 py-3 font-semibold">Session</th>
+<th class="text-left px-4 py-3 font-semibold">Speaker</th>
+<th class="text-left px-4 py-3 font-semibold">Notes</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-200 dark:divide-slate-800">
+<tr class="hover:bg-indigo-50 dark:hover:bg-slate-800/50 transition"><td class="px-4 py-3 font-medium text-slate-700 dark:text-slate-200">08:45–09:00</td><td class="px-4 py-3">Welcome & Introduction</td><td class="px-4 py-3">Organisers</td><td class="px-4 py-3">—</td></tr>
+<tr class="hover:bg-indigo-50 dark:hover:bg-slate-800/50 transition"><td class="px-4 py-3 font-medium text-slate-700 dark:text-slate-200">09:00–09:30</td><td class="px-4 py-3">Invited Talk 1</td><td class="px-4 py-3">Katja Dörschner-Boyaci</td><td class="px-4 py-3">Vision & active exploration</td></tr>
+<tr class="hover:bg-indigo-50 dark:hover:bg-slate-800/50 transition"><td class="px-4 py-3 font-medium text-slate-700 dark:text-slate-200">09:30–10:00</td><td class="px-4 py-3">Invited Talk 2</td><td class="px-4 py-3">Tirthankar Bandyopadhyay</td><td class="px-4 py-3">Robot–world interaction</td></tr>
+<tr class="hover:bg-indigo-50 dark:hover:bg-slate-800/50 transition"><td class="px-4 py-3 font-medium text-slate-700 dark:text-slate-200">10:00–10:30</td><td class="px-4 py-3">Invited Talk 3</td><td class="px-4 py-3">Danica Kragić</td><td class="px-4 py-3">—</td></tr>
+<tr class="bg-slate-50 dark:bg-slate-900/40"><td class="px-4 py-3 font-medium text-slate-700 dark:text-slate-200">10:30–11:00</td><td class="px-4 py-3">Coffee Break & Posters</td><td class="px-4 py-3">—</td><td class="px-4 py-3">Setup posters</td></tr>
+<tr class="hover:bg-indigo-50 dark:hover:bg-slate-800/50 transition"><td class="px-4 py-3 font-medium text-slate-700 dark:text-slate-200">11:00–11:30</td><td class="px-4 py-3">Early-career Spotlights</td><td class="px-4 py-3">TBA</td><td class="px-4 py-3">Short talks</td></tr>
+<tr class="hover:bg-indigo-50 dark:hover:bg-slate-800/50 transition"><td class="px-4 py-3 font-medium text-slate-700 dark:text-slate-200">11:30–12:10</td><td class="px-4 py-3">Contributed Talks</td><td class="px-4 py-3">Authors</td><td class="px-4 py-3">Extended abstracts</td></tr>
+<tr class="bg-slate-50 dark:bg-slate-900/40"><td class="px-4 py-3 font-medium text-slate-700 dark:text-slate-200">12:10–14:00</td><td class="px-4 py-3">Lunch & Demo Session</td><td class="px-4 py-3">—</td><td class="px-4 py-3">Videos & system demos</td></tr>
+<tr class="hover:bg-indigo-50 dark:hover:bg-slate-800/50 transition"><td class="px-4 py-3 font-medium text-slate-700 dark:text-slate-200">14:00–14:30</td><td class="px-4 py-3">Invited Talk 4</td><td class="px-4 py-3">Jeannette Bohg</td><td class="px-4 py-3">Interactive perception</td></tr>
+<tr class="hover:bg-indigo-50 dark:hover:bg-slate-800/50 transition"><td class="px-4 py-3 font-medium text-slate-700 dark:text-slate-200">14:30–15:00</td><td class="px-4 py-3">Invited Talk 5</td><td class="px-4 py-3">Oliver Brock</td><td class="px-4 py-3">—</td></tr>
+<tr class="bg-slate-50 dark:bg-slate-900/40"><td class="px-4 py-3 font-medium text-slate-700 dark:text-slate-200">15:00–15:30</td><td class="px-4 py-3">Coffee Break & Posters</td><td class="px-4 py-3">—</td><td class="px-4 py-3">—</td></tr>
+<tr class="hover:bg-indigo-50 dark:hover:bg-slate-800/50 transition"><td class="px-4 py-3 font-medium text-slate-700 dark:text-slate-200">15:30–16:00</td><td class="px-4 py-3">Invited Talk 6</td><td class="px-4 py-3">Lerrel Pinto</td><td class="px-4 py-3">—</td></tr>
+<tr class="hover:bg-indigo-50 dark:hover:bg-slate-800/50 transition"><td class="px-4 py-3 font-medium text-slate-700 dark:text-slate-200">16:00–16:20</td><td class="px-4 py-3">Invited Talk 7</td><td class="px-4 py-3">Nathan Lepora</td><td class="px-4 py-3">Tactile dexterity</td></tr>
+<tr class="hover:bg-indigo-50 dark:hover:bg-slate-800/50 transition"><td class="px-4 py-3 font-medium text-slate-700 dark:text-slate-200">16:20–17:00</td><td class="px-4 py-3">Industry-led Panel</td><td class="px-4 py-3">Panelists TBA</td><td class="px-4 py-3">Audience-driven Q&A</td></tr>
+<tr class="bg-slate-50 dark:bg-slate-900/40"><td class="px-4 py-3 font-medium text-slate-700 dark:text-slate-200">17:00–17:30</td><td class="px-4 py-3">Conclusion & Awards</td><td class="px-4 py-3">Organisers</td><td class="px-4 py-3">Best Paper/Poster/Video</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+
+<!-- Call for Papers -->
+<section id="cfp" class="py-20 bg-slate-50 dark:bg-slate-900/30 border-y border-slate-200 dark:border-slate-800">
+<div class="max-w-4xl mx-auto px-4 text-center">
+<h2 class="text-3xl font-bold">Call for Participation</h2>
+<p class="mt-6 text-lg text-slate-600 dark:text-slate-300">Details coming soon — <strong>TBA</strong>.</p>
+</div>
+</section>
+
+  <!-- Organizers -->
+  <section id="organizers" class="py-20">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl font-bold">Organisers</h2>
+      <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <article class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6">
+          <!-- <img src="assets/organizers/farias.jpg" alt="Cristiana de Farias" class="w-16 h-16 rounded-full object-cover" /> -->
+          <h3 class="mt-4 font-semibold">Cristiana de Farias</h3>
+          <p class="text-sm text-slate-500">Intelligent Autonomous Systems (IAS), TU Darmstadt</p>
+          <p class="mt-3 text-sm"><a href="mailto:cristiana.farias@tu-darmstadt.de" class="text-indigo-600">Email</a> · <a href="https://www.ias.informatik.tu-darmstadt.de/Team/CristianaMirandadeFarias" class="text-indigo-600">Website</a></p>
+        </article>
+        <article class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6">
+          <!-- <img src="assets/organizers/schneider.jpg" alt="Tim Schneider" class="w-16 h-16 rounded-full object-cover" /> -->
+          <h3 class="mt-4 font-semibold">Tim Schneider</h3>
+          <p class="text-sm text-slate-500">Intelligent Autonomous Systems (IAS), TU Darmstadt</p>
+          <p class="mt-3 text-sm"><a href="mailto:tim.schneider1@tu-darmstadt.de" class="text-indigo-600">Email</a> · <a href="https://www.ias.informatik.tu-darmstadt.de/Team/TimSchneider" class="text-indigo-600">Website</a></p>
+        </article>
+        <article class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6">
+          <!-- <img src="assets/organizers/mattamala.jpg" alt="Matias Mattamala" class="w-16 h-16 rounded-full object-cover" /> -->
+          <h3 class="mt-4 font-semibold">Matias Mattamala</h3>
+          <p class="text-sm text-slate-500">Centre for AI in Assistive Autonomy, University of Edinburgh</p>
+          <p class="mt-3 text-sm"><a href="mailto:matias.mattamala@ed.ac.uk" class="text-indigo-600">Email</a> · <a href="https://mmattamala.github.io/" class="text-indigo-600">Website</a></p>
+        </article>
+        <article class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6">
+          <!-- <img src="assets/organizers/buchanan.jpg" alt="Russell Buchanan" class="w-16 h-16 rounded-full object-cover" /> -->
+          <h3 class="mt-4 font-semibold">Russell Buchanan</h3>
+          <p class="text-sm text-slate-500">RIPL Lab, University of Waterloo</p>
+          <p class="mt-3 text-sm"><a href="mailto:russell.buchanan@uwaterloo.ca" class="text-indigo-600">Email</a> · <a href="https://www.ripl-lab.com/people" class="text-indigo-600">Website</a></p>
+        </article>
+        <article class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6">
+          <!-- <img src="assets/organizers/calandra.jpg" alt="Roberto Calandra" class="w-16 h-16 rounded-full object-cover" /> -->
+          <h3 class="mt-4 font-semibold">Roberto Calandra</h3>
+          <p class="text-sm text-slate-500">LASR Lab, TU Dresden</p>
+          <p class="mt-3 text-sm"><a href="mailto:roberto.calandra@tu-dresden.de" class="text-indigo-600">Email</a> · <a href="https://www.robertocalandra.com/" class="text-indigo-600">Website</a></p>
+        </article>
+      </div>
+      <h3 class="mt-12 text-2xl font-semibold">Advisory Board</h3>
+      <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-2 gap-6">
+        <article class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6">
+          <h4 class="font-semibold">Subramanian Ramamoorthy</h4>
+          <p class="text-sm text-slate-500">Centre for AI in Assistive Autonomy, University of Edinburgh</p>
+        </article>
+        <article class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6">
+          <h4 class="font-semibold">Jan Peters</h4>
+          <p class="text-sm text-slate-500">Intelligent Autonomous Systems (IAS), TU Darmstadt</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Registration / Venue -->
+  <section id="register" class="py-20 bg-slate-50 dark:bg-slate-900/30 border-y border-slate-200 dark:border-slate-800">
+    <div class="max-w-5xl mx-auto px-4">
+      <h2 class="text-3xl font-bold">Participation & Venue</h2>
+      <div class="mt-6 grid md:grid-cols-2 gap-6">
+        <div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6">
+          <h3 class="font-semibold">Registration</h3>
+          <p class="mt-2 text-sm">Please register via the main ICRA 2026 registration system. A workshop add-on may be required.</p>
+          <a href="#" class="mt-4 inline-flex items-center rounded-full px-5 py-3 bg-indigo-600 text-white hover:bg-indigo-700">ICRA Registration</a>
+          <p class="mt-3 text-xs text-slate-500">Livestream link will be posted here closer to the event.</p>
+        </div>
+        <div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6">
+          <h3 class="font-semibold">Venue</h3>
+          <p class="mt-2 text-sm">Vienna, Austria · Conference center TBA. Room details will be updated after scheduling.</p>
+          <div class="mt-4 aspect-[16/9] w-full overflow-hidden rounded-xl border border-slate-200 dark:border-slate-800">
+            <iframe title="Map" src="https://maps.google.com/maps?q=Vienna&t=&z=11&ie=UTF8&iwloc=&output=embed" class="w-full h-full"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-20">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold">FAQ</h2>
+      <div class="mt-6 divide-y divide-slate-200 dark:divide-slate-800 rounded-2xl border border-slate-200 dark:border-slate-800">
+        <details class="group p-6">
+          <summary class="flex cursor-pointer list-none items-center justify-between"><span class="font-medium">Are there archival proceedings?</span><span class="transition-transform group-open:rotate-45 text-xl">＋</span></summary>
+          <p class="mt-3 text-sm text-slate-600 dark:text-slate-300">No. Authors retain the right to submit to journals/conferences later.</p>
+        </details>
+        <details class="group p-6">
+          <summary class="flex cursor-pointer list-none items-center justify-between"><span class="font-medium">Is double-blind review used?</span><span class="transition-transform group-open:rotate-45 text-xl">＋</span></summary>
+          <p class="mt-3 text-sm text-slate-600 dark:text-slate-300">Yes, for contributed abstracts. Invited talks are not reviewed.</p>
+        </details>
+        <details class="group p-6">
+          <summary class="flex cursor-pointer list-none items-center justify-between"><span class="font-medium">Will there be streaming?</span><span class="transition-transform group-open:rotate-45 text-xl">＋</span></summary>
+          <p class="mt-3 text-sm text-slate-600 dark:text-slate-300">Yes. The full event will be live-streamed; remote Q&A moderation provided.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sponsors (optional) -->
+  <section id="sponsors" class="py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-2xl font-bold">Sponsors</h2>
+      <div class="mt-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 items-center">
+        <img src="assets/sponsors/logo1.svg" alt="Sponsor 1" class="h-8 opacity-70" />
+        <img src="assets/sponsors/logo2.svg" alt="Sponsor 2" class="h-8 opacity-70" />
+        <img src="assets/sponsors/logo3.svg" alt="Sponsor 3" class="h-8 opacity-70" />
+        <img src="assets/sponsors/logo4.svg" alt="Sponsor 4" class="h-8 opacity-70" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-10 border-t border-slate-200 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6">
+      <p class="text-sm">© <span id="year"></span> Act to Sense to Act Better · Built with Tailwind on GitHub Pages.</p>
+      <div class="flex items-center gap-4 text-sm">
+        <a href="#cfp" class="hover:underline">CFP</a>
+        <a href="#register" class="hover:underline">Registration</a>
+        <a href="https://github.com/active-perception-workshop/active-perception-workshop.github.io" class="hover:underline">GitHub</a>
+        <a href="#" class="hover:underline">Code of Conduct</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Minimal JS for theme + mobile menu -->
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menu');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn?.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+    // Theme toggle (persist to localStorage)
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    function setTheme(dark) {
+      const root = document.documentElement;
+      if (dark) { root.classList.add('dark'); localStorage.setItem('theme', 'dark'); themeIcon.textContent = '☀️'; }
+      else { root.classList.remove('dark'); localStorage.setItem('theme', 'light'); themeIcon.textContent = '🌙'; }
+    }
+    // init
+    setTheme(localStorage.getItem('theme') === 'dark');
+    themeToggle?.addEventListener('click', () => setTheme(!document.documentElement.classList.contains('dark')));
+  </script>
+
+  <!--
+  ====================
+  HOW TO DEPLOY
+  --------------------
+  1) Create a GitHub repo named <username>.github.io (user/organization site) or any repo (project site).
+  2) Put this file as /index.html at the repo root.
+  3) Add an /assets/ folder with images (logo.svg, hero-illustration.svg, speaker/organizer photos, etc.).
+  4) Commit & push. In Settings → Pages, set the source to main branch / root (or /docs) and save.
+  5) Your site will be live at https://<username>.github.io/ (or https://<username>.github.io/<repo>/).
+
+  Customize text (dates, venue, CFP) directly in the HTML above.
+  ====================
+  -->
 </body>
 </html>
