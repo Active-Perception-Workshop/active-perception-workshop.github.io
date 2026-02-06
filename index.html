@@ -1,14 +1,23 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Act to Sense to Act Better — ICRA 2026 Workshop</title>
-  <meta name="description" content="Act to Sense to Act Better — 1st Workshop on Learning and Representations for Active Perception in Manipulation at ICRA 2026, Vienna." />
-  <meta name="author" content="Your Name" />
+  <meta name="description"
+    content="Act to Sense to Act Better — 1st Workshop on Learning and Representations for Active Perception in Manipulation at ICRA 2026, Vienna." />
+  <meta name="author" content="Workshop Organizers" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;700;800&display=swap"
+    rel="stylesheet">
   <!-- Open Graph / Twitter -->
   <meta property="og:title" content="Active Perception Workshop" />
-  <meta property="og:description" content="Join us to explore sensing, action, and learning for embodied intelligence." />
+  <meta property="og:description"
+    content="Join us to explore sensing, action, and learning for embodied intelligence." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="assets/social-card.png" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -20,9 +29,36 @@
     tailwind.config = {
       theme: {
         extend: {
-          fontFamily: {
-            sans: ["Inter", "system-ui", "-apple-system", "Segoe UI", "Roboto", "Ubuntu", "Cantarell", "Noto Sans", "sans-serif"],
+          colors: {
+            brand: {
+              50: '#eef2ff',
+              100: '#e0e7ff',
+              200: '#c7d2fe',
+              300: '#a5b4fc',
+              400: '#818cf8',
+              500: '#6366f1', // Default Indigo
+              600: '#4f46e5',
+              700: '#4338ca',
+              800: '#3730a3',
+              900: '#312e81',
+              950: '#1e1b4b',
+            }
           },
+          fontFamily: {
+            sans: ["Inter", "system-ui", "sans-serif"],
+            display: ["Outfit", "system-ui", "sans-serif"],
+          },
+          animation: {
+            blob: "blob 7s infinite",
+          },
+          keyframes: {
+            blob: {
+              "0%": { transform: "translate(0px, 0px) scale(1)" },
+              "33%": { transform: "translate(30px, -50px) scale(1.1)" },
+              "66%": { transform: "translate(-20px, 20px) scale(0.9)" },
+              "100%": { transform: "translate(0px, 0px) scale(1)" },
+            }
+          }
         }
       },
       darkMode: 'class'
@@ -32,39 +68,96 @@
   <link rel="icon" href="assets/favicon.svg" />
   <style>
     /* Smooth scrolling for anchor links */
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .bg-grid {
+      background-size: 40px 40px;
+      background-image: radial-gradient(circle, #6366f1 1px, transparent 1px);
+    }
+
+    .animate-spin-slow {
+      animation: spin 60s linear infinite;
+    }
+
+    @keyframes spin {
+      from {
+        transform: translate(-50%, -50%) rotate(0deg);
+      }
+
+      to {
+        transform: translate(-50%, -50%) rotate(360deg);
+      }
+    }
+
+    .magic-border-gradient {
+      background: conic-gradient(from 0deg, transparent 0 340deg, #6366f1 360deg);
+      animation: border-spin 4s linear infinite;
+    }
+
+    @keyframes border-spin {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .animate-subtle-zoom {
+      animation: subtle-zoom 15s ease-in-out infinite alternate;
+    }
+
+    @keyframes subtle-zoom {
+      0% {
+        transform: scale(1);
+      }
+
+      100% {
+        transform: scale(1.25);
+      }
+    }
   </style>
+  <!-- AOS Animation CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
-<body class="bg-white text-slate-800 dark:bg-slate-950 dark:text-slate-200 font-sans">
+
+<body class="bg-white text-slate-800 dark:bg-slate-950 dark:text-slate-200 font-sans text-lg">
   <!-- Top Announcement Bar (optional) -->
-  <div class="bg-indigo-600 text-white text-sm">
+  <div class="bg-brand-600 text-white text-sm">
     <div class="max-w-7xl mx-auto px-4 py-2 text-center">
-      <!-- <strong>Call for Papers is open</strong> — Deadline: <span id="cfp-deadline">Dec 15, 2025</span> -->
+      <strong>Call for Papers is open</strong> — Deadline: <span id="cfp-deadline">March 21, 2026</span>
     </div>
   </div>
 
   <!-- Nav -->
-  <header class="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-white/70 bg-white/90 dark:supports-[backdrop-filter]:bg-slate-950/70 dark:bg-slate-950/90 border-b border-slate-200/60 dark:border-slate-800">
+  <header
+    class="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-white/70 bg-white/90 dark:supports-[backdrop-filter]:bg-slate-950/70 dark:bg-slate-950/90 border-b border-slate-200/60 dark:border-slate-800">
     <div class="max-w-7xl mx-auto px-4">
       <div class="flex items-center justify-between h-16">
         <a href="#home" class="flex items-center gap-2">
-          <!-- <img src="assets/logo.svg" alt="Workshop Logo" class="w-8 h-8" /> -->
-          <span class="font-semibold">Act to Sense to Act Better</span>
+          <img src="assets/logo/logo.png" alt="Workshop Logo" class="h-10 w-auto" />
+          <span class="font-semibold text-slate-800 dark:text-slate-100">Act to Sense to Act Better</span>
         </a>
-        <nav class="hidden md:flex items-center gap-6 text-sm">
-          <a href="#about" class="hover:text-indigo-600">About</a>
-          <a href="#speakers" class="hover:text-indigo-600">Speakers</a>
-          <a href="#dates" class="hover:text-indigo-600">Important Dates</a>
-          <a href="#schedule" class="hover:text-indigo-600">Schedule</a>
-          <a href="#cfp" class="hover:text-indigo-600">Call for Papers</a>
-          <a href="#organizers" class="hover:text-indigo-600">Organizers</a>
-          <a href="#faq" class="hover:text-indigo-600">FAQ</a>
-          <a href="#register" class="inline-flex items-center rounded-full px-4 py-2 bg-indigo-600 text-white hover:bg-indigo-700">Register</a>
-          <button id="theme-toggle" aria-label="Toggle dark mode" class="p-2 rounded-lg border border-slate-200 dark:border-slate-800">
+        <nav class="hidden md:flex items-center gap-6 text-base">
+          <a href="#about" class="hover:text-brand-600">About</a>
+          <a href="#speakers" class="hover:text-brand-600">Speakers</a>
+          <a href="#dates" class="hover:text-brand-600">Important Dates</a>
+          <a href="#schedule" class="hover:text-brand-600">Schedule</a>
+          <a href="#cfp" class="hover:text-brand-600">Call for Papers</a>
+          <a href="#organizers" class="hover:text-brand-600">Organizers</a>
+          <a href="#faq" class="hover:text-brand-600">FAQ</a>
+          <a href="#register"
+            class="inline-flex items-center rounded-full px-4 py-2 bg-brand-600 text-white hover:bg-brand-700">Register</a>
+          <button id="theme-toggle" aria-label="Toggle dark mode"
+            class="p-2 rounded-lg border border-slate-200 dark:border-slate-800">
             <span id="theme-icon">🌙</span>
           </button>
         </nav>
-        <button id="menu" class="md:hidden p-2 rounded-lg border border-slate-200 dark:border-slate-800" aria-label="Open menu">☰</button>
+        <button id="menu" class="md:hidden p-2 rounded-lg border border-slate-200 dark:border-slate-800"
+          aria-label="Open menu">☰</button>
       </div>
     </div>
     <!-- Mobile menu -->
@@ -82,120 +175,205 @@
     </div>
   </header>
 
-<!-- Hero -->
-<section id="home" class="relative overflow-hidden">
-<div class="max-w-4xl mx-auto px-4 py-24 lg:py-28 text-center">
-<h1 class="text-4xl md:text-6xl font-extrabold leading-tight">Act to Sense to Act Better</h1>
-<h2 class="mt-4 text-2xl md:text-3xl font-semibold text-indigo-600">1st Workshop on Learning and Representations for Active Perception in Manipulation</h2>
-<p class="mt-6 text-lg text-slate-600 dark:text-slate-300">Held at <span class="font-medium">ICRA 2026</span>, Vienna, Austria — <span class="font-medium">Full-day workshop</span>, 1st June 2026.</p>
-<div class="mt-8 flex flex-wrap justify-center gap-3">
-<a href="#register" class="inline-flex items-center rounded-full px-5 py-3 bg-indigo-600 text-white hover:bg-indigo-700">Register</a>
-<a href="#cfp" class="inline-flex items-center rounded-full px-5 py-3 border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-900">Submit Paper</a>
-</div>
-<!-- <p class="mt-4 text-sm text-slate-500 dark:text-slate-400">Hybrid participation available · Proceedings on OpenReview/ArXiv (TBD)</p> -->
-</div>
-</section>
+  <!-- Hero -->
+  <section id="home"
+    class="relative overflow-hidden bg-white dark:bg-slate-950 isolate min-h-[90vh] flex items-center justify-center">
+
+    <!-- Animated Grid Background -->
+    <div class="absolute inset-0 bg-grid opacity-[0.03] dark:opacity-[0.05] pointer-events-none"></div>
+
+    <!-- Robotic Hero Background Image -->
+    <div class="absolute inset-0 z-0">
+      <img src="assets/hero_background.png" alt=""
+        class="w-full h-full object-cover opacity-25 dark:opacity-40 mix-blend-multiply dark:mix-blend-screen grayscale-[10%] animate-subtle-zoom" />
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-transparent via-white/50 to-white dark:via-slate-950/50 dark:to-slate-950">
+      </div>
+    </div>
+
+    <!-- Decorative Blobs -->
+    <div
+      class="absolute top-0 -left-4 w-96 h-96 bg-brand-300/20 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob dark:bg-brand-900/20 dark:mix-blend-lighten">
+    </div>
+    <div
+      class="absolute top-0 -right-4 w-96 h-96 bg-purple-300/20 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000 dark:bg-purple-900/20 dark:mix-blend-lighten">
+    </div>
+
+    <div class="relative max-w-5xl mx-auto px-4 py-32 lg:py-40 text-center z-10" data-aos="zoom-in"
+      data-aos-duration="1000">
+
+      <!-- Magic Badge (Linked) -->
+      <a href="https://2026.ieee-icra.org/" target="_blank" rel="noopener noreferrer"
+        class="relative inline-flex items-center justify-center p-[1px] mb-8 overflow-hidden rounded-full group hover:scale-105 transition-transform duration-300 cursor-pointer">
+        <span
+          class="absolute inset-0 w-full h-full -translate-x-[50%] -translate-y-[50%] scale-[2.5] magic-border-gradient opacity-100"></span>
+        <div
+          class="relative inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white dark:bg-slate-900/95 backdrop-blur-xl">
+          <span class="flex h-2 w-2 relative">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-500"></span>
+          </span>
+          <span class="text-sm font-medium bg-clip-text text-transparent bg-gradient-to-r from-brand-600 to-purple-600">
+            ICRA 2026 · Vienna
+          </span>
+        </div>
+      </a>
+
+      <h1
+        class="text-6xl md:text-9xl font-extrabold leading-tight tracking-tight font-display text-slate-900 dark:text-white mb-8 drop-shadow-sm">
+        Act to Sense to <br class="hidden md:block" /> <span
+          class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-purple-600 relative">
+          Act Better
+          <svg class="absolute w-full h-3 -bottom-1 left-0 text-brand-400/30 -z-10" viewBox="0 0 100 10"
+            preserveAspectRatio="none">
+            <path d="M0 5 Q 50 10 100 5" stroke="currentColor" stroke-width="8" fill="none" />
+          </svg>
+        </span></h1>
+      <h2 class="text-2xl md:text-3xl font-medium text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed">
+        1st Workshop on Learning and Representations for <br class="hidden md:block" /> Active Perception in
+        Manipulation</h2>
+      <p class="mt-8 text-lg text-slate-600 dark:text-slate-400">Full-day workshop · 1st June 2026</p>
+      <div class="mt-8 flex flex-wrap justify-center gap-3">
+        <a href="#register"
+          class="inline-flex items-center rounded-full px-5 py-3 bg-brand-600 text-white hover:bg-brand-700">Register</a>
+        <a href="#cfp"
+          class="inline-flex items-center rounded-full px-5 py-3 border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-900">Submit
+          Paper</a>
+      </div>
+      <!-- <p class="mt-4 text-sm text-slate-500 dark:text-slate-400">Hybrid participation available · Proceedings on OpenReview/ArXiv (TBD)</p> -->
+    </div>
+  </section>
 
   <!-- About -->
-  <section id="about" class="py-20 border-t border-slate-200 dark:border-slate-800">
+  <section id="about" class="py-20 border-t border-slate-200 dark:border-slate-800" data-aos="fade-up">
     <div class="max-w-4xl mx-auto px-4">
-      <h2 class="text-3xl font-bold">About</h2>
-      <p class="mt-4 text-slate-700 dark:text-slate-300">Manipulation in unstructured environments demands more than accurate sensing—it requires purposeful interaction to acquire the right information at the right time. <strong>Active perception</strong> integrates sensing actions into manipulation: reorienting objects to expose features, sweeping a wrist to disambiguate geometry, or applying controlled forces to infer material properties. These strategies are essential for dexterity, enabling robots to adapt grasps, refine motion plans, and cope with uncertainty during execution.</p>
+      <h2 class="text-4xl font-bold">About</h2>
+      <p class="mt-4 text-slate-700 dark:text-slate-300">Manipulation in unstructured environments demands more than
+        accurate sensing—it requires purposeful interaction to acquire the right information at the right time.
+        <strong>Active perception</strong> integrates sensing actions into manipulation: reorienting objects to expose
+        features, sweeping a wrist to disambiguate geometry, or applying controlled forces to infer material properties.
+        These strategies are essential for dexterity, enabling robots to adapt grasps, refine motion plans, and cope
+        with uncertainty during execution.
+      </p>
       <p class="mt-4 text-slate-700 dark:text-slate-300">This workshop focuses on three themes:</p>
       <ul class="mt-4 list-disc pl-6 space-y-2 text-slate-700 dark:text-slate-300">
-        <li><strong>Multi-Modal Active Perception:</strong> Purposeful tactile, visual, and multi-modal exploration to improve grasping, in-hand manipulation, and environment understanding.</li>
-        <li><strong>Algorithmic and Formal Contributions:</strong> Uncertainty-aware control, information-theoretic action selection, and learning-based methods that integrate sensing with acting.</li>
-        <li><strong>Integrated Systems and Applications:</strong> Combining active perception with regrasping, navigation, and active reconstruction for real-world tasks.</li>
+        <li><strong>Multi-Modal Active Perception:</strong> Purposeful tactile, visual, and multi-modal exploration to
+          improve grasping, in-hand manipulation, and environment understanding.</li>
+        <li><strong>Algorithmic and Formal Contributions:</strong> Uncertainty-aware control, information-theoretic
+          action selection, and learning-based methods that integrate sensing with acting.</li>
+        <li><strong>Integrated Systems and Applications:</strong> Combining active perception with regrasping,
+          navigation, and active reconstruction for real-world tasks.</li>
       </ul>
     </div>
   </section>
 
   <!-- Speakers -->
-  <section id="speakers" class="py-20">
+  <section id="speakers" class="py-20" data-aos="fade-up">
     <div class="max-w-7xl mx-auto px-4">
       <div class="flex items-end justify-between">
-        <h2 class="text-3xl font-bold">Invited Speakers (Tentative)</h2>
+        <h2 class="text-4xl font-bold">Invited Speakers (Tentative)</h2>
         <p class="text-sm text-slate-500">Final lineup TBA.</p>
       </div>
       <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <article class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6">
+        <article
+          class="group relative overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-800 p-6 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 bg-white dark:bg-slate-900/50 hover:bg-white/80 dark:hover:bg-slate-800/80">
           <img src="assets/speakers/jeannette.png" alt="Jeannette Bohg" class="w-24 h-24 rounded-full object-cover" />
           <h3 class="mt-4 text-xl font-semibold">Jeannette Bohg</h3>
           <p class="text-sm text-slate-500">Interactive Perception & Robot Learning Lab, Stanford University</p>
-          <p class="mt-3 text-sm"> <a href="https://web.stanford.edu/~bohg/" class="text-indigo-600">Website</a></p>
+          <p class="mt-3 text-sm"> <a href="https://web.stanford.edu/~bohg/" class="text-brand-600">Website</a></p>
         </article>
-        <article class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6">
+        <article
+          class="group relative overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-800 p-6 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 bg-white dark:bg-slate-900/50 hover:bg-white/80 dark:hover:bg-slate-800/80">
           <img src="assets/speakers/oliver.jpg" alt="Oliver Brock" class="w-24 h-24 rounded-full object-cover" />
           <h3 class="mt-4 text-xl font-semibold">Oliver Brock</h3>
           <p class="text-sm text-slate-500">Robotics & Biology Lab, TU Berlin</p>
-          <p class="mt-3 text-sm"> <a href="https://www.tu.berlin/en/robotics/about-rbo/prof-dr-oliver-brock" class="text-indigo-600">Website</a></p>
+          <p class="mt-3 text-sm"> <a href="https://www.tu.berlin/en/robotics/about-rbo/prof-dr-oliver-brock"
+              class="text-brand-600">Website</a></p>
         </article>
-        <article class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6">
-          <img src="assets/speakers/lerrel.jpg" alt="Lerrel Pinto" class="w-24 h-24 rounded-full object-cover" />
-          <h3 class="mt-4 text-xl font-semibold">Lerrel Pinto</h3>
-          <p class="text-sm text-slate-500">General-purpose Robotics & AI Lab, NYU</p>
-          <p class="mt-3 text-sm"><a href="https://www.lerrelpinto.com/" class="text-indigo-600">Website</a></p>
+        <article
+          class="group relative overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-800 p-6 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 bg-slate-50 dark:bg-slate-900/50 flex flex-col items-center justify-center text-center">
+          <div
+            class="h-24 w-24 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center text-3xl text-slate-400">
+            ?</div>
+          <h3 class="mt-4 text-xl font-semibold">More Speakers TBC</h3>
+          <p class="text-sm text-slate-500">Check back soon for updates.</p>
         </article>
-        <article class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6">
-          <img src="assets/speakers/danica.jpg" alt="Danica Kragic" class="w-24 h-24 rounded-full object-cover" />
-          <h3 class="mt-4 text-xl font-semibold">Danica Kragić</h3>
-          <p class="text-sm text-slate-500">Royal Institute of Technology (KTH)</p>
-          <p class="mt-3 text-sm"> <a href="https://www.csc.kth.se/~danik/" class="text-indigo-600">Website</a></p>
-        </article>
-        <article class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6">
-          <img src="assets/speakers/nathan.jpg" alt="Nathan Lepora" class="w-24 h-24 rounded-full object-cover" />
-          <h3 class="mt-4 text-xl font-semibold">Nathan Lepora</h3>
-          <p class="text-sm text-slate-500">University of Bristol / BRL</p>
-          <p class="mt-3 text-sm"> <a href="https://lepora.com/" class="text-indigo-600">Website</a></p>
-        </article>
-        <article class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6">
-          <img src="assets/speakers/katja.jpg" alt="Katja Dörschner-Boyaci" class="w-24 h-24 rounded-full object-cover" />
+        <article
+          class="group relative overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-800 p-6 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 bg-white dark:bg-slate-900/50 hover:bg-white/80 dark:hover:bg-slate-800/80">
+          <img src="assets/speakers/katja.jpg" alt="Katja Dörschner-Boyaci"
+            class="w-24 h-24 rounded-full object-cover" />
           <h3 class="mt-4 text-xl font-semibold">Katja Dörschner-Boyaci</h3>
           <p class="text-sm text-slate-500">PACE Lab, Justus-Liebig-Universität Giessen</p>
-          <p class="mt-3 text-sm"><a href="http://www.doerschner.de/index.html" class="text-indigo-600">Website</a></p>
+          <p class="mt-3 text-sm"><a href="http://www.doerschner.de/index.html" class="text-brand-600">Website</a></p>
         </article>
-        <article class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6">
-          <img src="assets/speakers/tirtha.jpg" alt="Tirthankar Bandyopadhyay" class="w-24 h-24 rounded-full object-cover" />
+        <article
+          class="group relative overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-800 p-6 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 bg-white dark:bg-slate-900/50 hover:bg-white/80 dark:hover:bg-slate-800/80">
+          <img src="assets/speakers/tirtha.jpg" alt="Tirthankar Bandyopadhyay"
+            class="w-24 h-24 rounded-full object-cover" />
           <h3 class="mt-4 text-xl font-semibold">Tirthankar Bandyopadhyay</h3>
           <p class="text-sm text-slate-500">CSIRO Data61</p>
-          <p class="mt-3 text-sm">. <a href="https://people.csiro.au/b/t/tirtha-bandy" class="text-indigo-600">Website</a></p>
+          <p class="mt-3 text-sm">. <a href="https://people.csiro.au/b/t/tirtha-bandy"
+              class="text-brand-600">Website</a></p>
         </article>
       </div>
     </div>
   </section>
 
   <!-- Important Dates -->
-  <section id="dates" class="py-20 bg-slate-50 dark:bg-slate-900/30 border-y border-slate-200 dark:border-slate-800">
+  <section id="dates" class="py-20 bg-slate-50 dark:bg-slate-900/30 border-y border-slate-200 dark:border-slate-800"
+    data-aos="fade-up">
     <div class="max-w-5xl mx-auto px-4">
-      <h2 class="text-3xl font-bold">Important Info</h2>
+      <h2 class="text-4xl font-bold">Important Info</h2>
       <div class="mt-8 grid md:grid-cols-2 gap-8">
         <ul class="space-y-4">
           <li class="flex items-start gap-4">
-            <div class="h-10 w-10 rounded-full bg-indigo-600 text-white flex items-center justify-center">📍</div>
+            <div class="h-10 w-10 rounded-full bg-brand-600 text-white flex items-center justify-center">📍</div>
             <div>
               <div class="font-medium">Venue</div>
-              <div class="text-sm text-slate-500">ICRA 2026 · Vienna, Austria · 1st of June, Full-day</div>
+              <div class="text-sm text-slate-500"><a href="https://2026.ieee-icra.org/" target="_blank"
+                  rel="noopener noreferrer" class="hover:text-brand-600 hover:underline transition-colors">ICRA 2026</a>
+                · Vienna, Austria · 1st of June, Full-day</div>
             </div>
           </li>
           <li class="flex items-start gap-4">
-            <div class="h-10 w-10 rounded-full bg-indigo-600 text-white flex items-center justify-center">🖥️</div>
+            <div class="h-10 w-10 rounded-full bg-brand-600 text-white flex items-center justify-center">🖥️</div>
             <div>
               <div class="font-medium">Format</div>
-              <div class="text-sm text-slate-500">Hybrid: in-person + livestream; talks, spotlights, posters, demos, panel</div>
+              <div class="text-sm text-slate-500">Hybrid: in-person + livestream; talks, spotlights, posters, demos,
+                panel</div>
             </div>
           </li>
           <li class="flex items-start gap-4">
-            <div class="h-10 w-10 rounded-full bg-indigo-600 text-white flex items-center justify-center">🏆</div>
+            <div class="h-10 w-10 rounded-full bg-brand-600 text-white flex items-center justify-center">🏆</div>
             <div>
               <div class="font-medium">Awards</div>
-              <div class="text-sm text-slate-500">Best Paper, Best Poster/Presentation, Best Video (with certificates & prizes)</div>
+              <div class="text-sm text-slate-500">Best Paper, Best Poster/Presentation, Best Video (with certificates &
+                prizes)</div>
+            </div>
+          </li>
+          </li>
+          <li class="flex items-start gap-4">
+            <div class="h-10 w-10 rounded-full bg-brand-600 text-white flex items-center justify-center">📅</div>
+            <div>
+              <div class="font-medium">Call for Papers Opens</div>
+              <div class="text-sm text-slate-500">February 6, 2026</div>
+            </div>
+          </li>
+          <li class="flex items-start gap-4">
+            <div class="h-10 w-10 rounded-full bg-brand-600 text-white flex items-center justify-center">⏳</div>
+            <div>
+              <div class="font-medium">Submission Deadline</div>
+              <div class="text-sm text-slate-500 font-semibold text-brand-600">March 21, 2026</div>
             </div>
           </li>
         </ul>
         <div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6">
           <h3 class="font-semibold">Contact</h3>
-          <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Email the organisers: <a href="mailto:cristiana.farias@tu-darmstadt.de" class="text-indigo-600">cristiana.farias@tu-darmstadt.de</a>,</p>
-          <p class="mt-4 text-sm">Workshop website: <a href="https://active-perception-workshop.github.io/" class="text-indigo-600">active-perception-workshop.github.io</a></p>
+          <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Email the organisers: <a
+              href="mailto:cristiana.farias@tu-darmstadt.de"
+              class="text-brand-600">cristiana.farias@tu-darmstadt.de</a>,</p>
+          <p class="mt-4 text-sm">Workshop website: <a href="https://active-perception-workshop.github.io/"
+              class="text-brand-600">active-perception-workshop.github.io</a></p>
         </div>
       </div>
     </div>
@@ -203,153 +381,190 @@
 
 
 
-<!-- Schedule -->
-<section id="schedule" class="py-20 bg-gradient-to-b from-indigo-50 via-white to-indigo-50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-900">
-  <div class="max-w-5xl mx-auto px-4">
-    <h2 class="text-3xl font-bold text-center">Tentative Schedule</h2>
-    <p class="mt-2 text-sm text-slate-600 dark:text-slate-400 text-center">
-      Subject to change to fit the conference agenda and speaker availability.
-    </p>
-    <div class="mt-10 overflow-x-auto rounded-2xl shadow-lg border border-slate-200 dark:border-slate-800">
-      <table class="min-w-full text-sm">
-        <thead class="bg-indigo-600 text-white">
-          <tr>
-            <th class="text-left px-4 py-3 font-semibold">Time</th>
-            <th class="text-left px-4 py-3 font-semibold">Session</th>
-            <th class="text-left px-4 py-3 font-semibold">Speaker</th>
-          </tr>
-        </thead>
-        <tbody class="divide-y divide-slate-200 dark:divide-slate-800">
-          <tr class="hover:bg-indigo-50 dark:hover:bg-slate-800/50 transition">
-            <td class="px-4 py-3 font-medium text-slate-700 dark:text-slate-200">08:45–09:00</td>
-            <td class="px-4 py-3">Welcome & Introduction</td>
-            <td class="px-4 py-3">Organisers</td>
-          </tr>
-          <tr class="hover:bg-indigo-50 dark:hover:bg-slate-800/50 transition">
-            <td class="px-4 py-3 font-medium text-slate-700 dark:text-slate-200">09:00–09:30</td>
-            <td class="px-4 py-3">Invited Talk 1</td>
-            <td class="px-4 py-3">Katja Dörschner-Boyaci</td>
-          </tr>
-          <tr class="hover:bg-indigo-50 dark:hover:bg-slate-800/50 transition">
-            <td class="px-4 py-3 font-medium text-slate-700 dark:text-slate-200">09:30–10:00</td>
-            <td class="px-4 py-3">Invited Talk 2</td>
-            <td class="px-4 py-3">Tirthankar Bandyopadhyay</td>
-          </tr>
-          <tr class="hover:bg-indigo-50 dark:hover:bg-slate-800/50 transition">
-            <td class="px-4 py-3 font-medium text-slate-700 dark:text-slate-200">10:00–10:30</td>
-            <td class="px-4 py-3">Invited Talk 3</td>
-            <td class="px-4 py-3">Danica Kragić</td>
-          </tr>
-          <tr class="bg-slate-50 dark:bg-slate-900/40">
-            <td class="px-4 py-3 font-medium text-slate-700 dark:text-slate-200">10:30–11:00</td>
-            <td class="px-4 py-3">Coffee Break & Posters</td>
-            <td class="px-4 py-3">—</td>
-          </tr>
-          <tr class="hover:bg-indigo-50 dark:hover:bg-slate-800/50 transition">
-            <td class="px-4 py-3 font-medium text-slate-700 dark:text-slate-200">11:00–11:30</td>
-            <td class="px-4 py-3">Early-career Spotlights</td>
-            <td class="px-4 py-3">TBA</td>
-          </tr>
-          <tr class="hover:bg-indigo-50 dark:hover:bg-slate-800/50 transition">
-            <td class="px-4 py-3 font-medium text-slate-700 dark:text-slate-200">11:30–12:10</td>
-            <td class="px-4 py-3">Contributed Talks</td>
-            <td class="px-4 py-3">Authors</td>
-          </tr>
-          <tr class="bg-slate-50 dark:bg-slate-900/40">
-            <td class="px-4 py-3 font-medium text-slate-700 dark:text-slate-200">12:10–14:00</td>
-            <td class="px-4 py-3">Lunch & Demo Session</td>
-            <td class="px-4 py-3">—</td>
-          </tr>
-          <tr class="hover:bg-indigo-50 dark:hover:bg-slate-800/50 transition">
-            <td class="px-4 py-3 font-medium text-slate-700 dark:text-slate-200">14:00–14:30</td>
-            <td class="px-4 py-3">Invited Talk 4</td>
-            <td class="px-4 py-3">Jeannette Bohg</td>
-          </tr>
-          <tr class="hover:bg-indigo-50 dark:hover:bg-slate-800/50 transition">
-            <td class="px-4 py-3 font-medium text-slate-700 dark:text-slate-200">14:30–15:00</td>
-            <td class="px-4 py-3">Invited Talk 5</td>
-            <td class="px-4 py-3">Oliver Brock</td>
-          </tr>
-          <tr class="bg-slate-50 dark:bg-slate-900/40">
-            <td class="px-4 py-3 font-medium text-slate-700 dark:text-slate-200">15:00–15:30</td>
-            <td class="px-4 py-3">Coffee Break & Posters</td>
-            <td class="px-4 py-3">—</td>
-          </tr>
-          <tr class="hover:bg-indigo-50 dark:hover:bg-slate-800/50 transition">
-            <td class="px-4 py-3 font-medium text-slate-700 dark:text-slate-200">15:30–16:00</td>
-            <td class="px-4 py-3">Invited Talk 6</td>
-            <td class="px-4 py-3">Lerrel Pinto</td>
-          </tr>
-          <tr class="hover:bg-indigo-50 dark:hover:bg-slate-800/50 transition">
-            <td class="px-4 py-3 font-medium text-slate-700 dark:text-slate-200">16:00–16:20</td>
-            <td class="px-4 py-3">Invited Talk 7</td>
-            <td class="px-4 py-3">Nathan Lepora</td>
-          </tr>
-          <tr class="hover:bg-indigo-50 dark:hover:bg-slate-800/50 transition">
-            <td class="px-4 py-3 font-medium text-slate-700 dark:text-slate-200">16:20–17:00</td>
-            <td class="px-4 py-3">Industry-led Panel</td>
-            <td class="px-4 py-3">Panelists TBA</td>
-          </tr>
-          <tr class="bg-slate-50 dark:bg-slate-900/40">
-            <td class="px-4 py-3 font-medium text-slate-700 dark:text-slate-200">17:00–17:30</td>
-            <td class="px-4 py-3">Conclusion & Awards</td>
-            <td class="px-4 py-3">Organisers</td>
-          </tr>
-        </tbody>
-      </table>
+  <!-- Schedule -->
+  <section id="schedule"
+    class="py-20 bg-gradient-to-b from-brand-50 via-white to-brand-50 dark:from-slate-900 dark:via-slate-950 dark:to-slate-900"
+    data-aos="fade-up">
+    <div class="max-w-5xl mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center">Tentative Schedule</h2>
+      <p class="mt-2 text-sm text-slate-600 dark:text-slate-400 text-center">
+        Subject to change to fit the conference agenda and speaker availability.
+      </p>
+      <div class="mt-10 overflow-x-auto rounded-2xl shadow-lg border border-slate-200 dark:border-slate-800">
+        <table class="min-w-full text-sm">
+          <thead class="bg-brand-600 text-white">
+            <tr>
+              <th class="text-left px-4 py-3 font-semibold">Time</th>
+              <th class="text-left px-4 py-3 font-semibold">Session</th>
+              <th class="text-left px-4 py-3 font-semibold">Tentative Title</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200 dark:divide-slate-800">
+            <tr
+              class="group hover:bg-white dark:hover:bg-slate-800/80 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 border-l-4 border-transparent hover:border-brand-500">
+              <td class="px-4 py-3 font-medium text-slate-700 dark:text-slate-200">08:45–09:00</td>
+              <td class="px-4 py-3">Welcome & Introduction</td>
+              <td class="px-4 py-3">Organisers</td>
+            </tr>
+            <tr
+              class="group hover:bg-white dark:hover:bg-slate-800/80 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 border-l-4 border-transparent hover:border-brand-500">
+              <td class="px-4 py-3 font-medium text-slate-700 dark:text-slate-200">09:00–09:30</td>
+              <td class="px-4 py-3">Invited Talk 1</td>
+              <td class="px-4 py-3"><span class="italic text-slate-500">Title TBA</span></td>
+            </tr>
+            <tr
+              class="group hover:bg-white dark:hover:bg-slate-800/80 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 border-l-4 border-transparent hover:border-brand-500">
+              <td class="px-4 py-3 font-medium text-slate-700 dark:text-slate-200">09:30–10:00</td>
+              <td class="px-4 py-3">Invited Talk 2</td>
+              <td class="px-4 py-3"><span class="italic text-slate-500">Title TBA</span></td>
+            </tr>
+            <tr
+              class="group hover:bg-white dark:hover:bg-slate-800/80 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 border-l-4 border-transparent hover:border-brand-500">
+              <td class="px-4 py-3 font-medium text-slate-700 dark:text-slate-200">10:00–10:30</td>
+              <td class="px-4 py-3">Invited Talk 3</td>
+              <td class="px-4 py-3"><span class="italic text-slate-500">Title TBA</span></td>
+            </tr>
+            <tr class="bg-slate-50 dark:bg-slate-900/40">
+              <td class="px-4 py-3 font-medium text-slate-700 dark:text-slate-200">10:30–11:00</td>
+              <td class="px-4 py-3">Coffee Break & Posters</td>
+              <td class="px-4 py-3">—</td>
+            </tr>
+            <tr
+              class="group hover:bg-white dark:hover:bg-slate-800/80 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 border-l-4 border-transparent hover:border-brand-500">
+              <td class="px-4 py-3 font-medium text-slate-700 dark:text-slate-200">11:00–11:30</td>
+              <td class="px-4 py-3">Early-career Spotlights</td>
+              <td class="px-4 py-3">TBA</td>
+            </tr>
+            <tr
+              class="group hover:bg-white dark:hover:bg-slate-800/80 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 border-l-4 border-transparent hover:border-brand-500">
+              <td class="px-4 py-3 font-medium text-slate-700 dark:text-slate-200">11:30–12:10</td>
+              <td class="px-4 py-3">Contributed Talks</td>
+              <td class="px-4 py-3">Authors</td>
+            </tr>
+            <tr class="bg-slate-50 dark:bg-slate-900/40">
+              <td class="px-4 py-3 font-medium text-slate-700 dark:text-slate-200">12:10–14:00</td>
+              <td class="px-4 py-3">Lunch & Demo Session</td>
+              <td class="px-4 py-3">—</td>
+            </tr>
+            <tr
+              class="group hover:bg-white dark:hover:bg-slate-800/80 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 border-l-4 border-transparent hover:border-brand-500">
+              <td class="px-4 py-3 font-medium text-slate-700 dark:text-slate-200">14:00–14:30</td>
+              <td class="px-4 py-3">Invited Talk 4</td>
+              <td class="px-4 py-3"><span class="italic text-slate-500">Title TBA</span></td>
+            </tr>
+            <tr
+              class="group hover:bg-white dark:hover:bg-slate-800/80 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 border-l-4 border-transparent hover:border-brand-500">
+              <td class="px-4 py-3 font-medium text-slate-700 dark:text-slate-200">14:30–15:00</td>
+              <td class="px-4 py-3">Invited Talk 5</td>
+              <td class="px-4 py-3"><span class="italic text-slate-500">Title TBA</span></td>
+            </tr>
+            <tr class="bg-slate-50 dark:bg-slate-900/40">
+              <td class="px-4 py-3 font-medium text-slate-700 dark:text-slate-200">15:00–15:30</td>
+              <td class="px-4 py-3">Coffee Break & Posters</td>
+              <td class="px-4 py-3">—</td>
+            </tr>
+            <tr
+              class="group hover:bg-white dark:hover:bg-slate-800/80 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 border-l-4 border-transparent hover:border-brand-500">
+              <td class="px-4 py-3 font-medium text-slate-700 dark:text-slate-200">15:30–16:00</td>
+              <td class="px-4 py-3">Invited Talk 6</td>
+              <td class="px-4 py-3"><span class="italic text-slate-500">Title TBA</span></td>
+            </tr>
+            <tr
+              class="group hover:bg-white dark:hover:bg-slate-800/80 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 border-l-4 border-transparent hover:border-brand-500">
+              <td class="px-4 py-3 font-medium text-slate-700 dark:text-slate-200">16:00–16:20</td>
+              <td class="px-4 py-3">Invited Talk 7</td>
+              <td class="px-4 py-3"><span class="italic text-slate-500">Title TBA</span></td>
+            </tr>
+            <tr class="hover:bg-brand-50 dark:hover:bg-slate-800/50 transition">
+              <td class="px-4 py-3 font-medium text-slate-700 dark:text-slate-200">16:20–17:00</td>
+              <td class="px-4 py-3">Industry-led Panel</td>
+              <td class="px-4 py-3">Panelists TBA</td>
+            </tr>
+            <tr class="bg-slate-50 dark:bg-slate-900/40">
+              <td class="px-4 py-3 font-medium text-slate-700 dark:text-slate-200">17:00–17:30</td>
+              <td class="px-4 py-3">Conclusion & Awards</td>
+              <td class="px-4 py-3">Organisers</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
 
-<!-- Call for Papers -->
-<section id="cfp" class="py-20 bg-slate-50 dark:bg-slate-900/30 border-y border-slate-200 dark:border-slate-800">
-<div class="max-w-4xl mx-auto px-4 text-center">
-<h2 class="text-3xl font-bold">Call for Participation</h2>
-<p class="mt-6 text-lg text-slate-600 dark:text-slate-300">Details coming soon — <strong>TBA</strong>.</p>
-</div>
-</section>
+  <!-- Call for Papers -->
+  <section id="cfp" class="py-20 bg-slate-50 dark:bg-slate-900/30 border-y border-slate-200 dark:border-slate-800"
+    data-aos="fade-up">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-4xl font-bold">Call for Participation</h2>
+      <p class="mt-6 text-lg text-slate-600 dark:text-slate-300">
+        We invite submissions for the active perception workshop.
+      </p>
+      <div class="mt-8 flex flex-col items-center gap-4">
+        <p class="text-xl font-medium text-brand-600">Submission Period: <span
+            class="text-slate-800 dark:text-white">Feb 6 — March 21, 2026</span></p>
+        <a href="https://openreview.net/group?id=IEEE.org/ICRA/2026/Workshop/ASAB&referrer=%5BHomepage%5D(%2F)"
+          class="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-brand-600 text-white font-semibold hover:bg-brand-700 hover:scale-105 transition-all shadow-lg hover:shadow-brand-500/25">
+          Submit via OpenReview
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
 
   <!-- Organizers -->
-  <section id="organizers" class="py-20">
+  <section id="organizers" class="py-20" data-aos="fade-up">
     <div class="max-w-7xl mx-auto px-4">
-      <h2 class="text-3xl font-bold">Organisers</h2>
+      <h2 class="text-4xl font-bold">Organisers</h2>
       <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         <article class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6">
-          <img src="assets/organizers/cristiana.jpg" alt="Cristiana de Farias" class="w-16 h-16 rounded-full object-cover" />
+          <img src="assets/organizers/cristiana.jpg" alt="Cristiana de Farias"
+            class="w-16 h-16 rounded-full object-cover" />
           <h3 class="mt-4 font-semibold">Cristiana de Farias</h3>
           <p class="text-sm text-slate-500">Intelligent Autonomous Systems (IAS), TU Darmstadt</p>
-          <p class="mt-3 text-sm"><a href="mailto:cristiana.farias@tu-darmstadt.de" class="text-indigo-600">Email</a> · <a href="https://www.ias.informatik.tu-darmstadt.de/Team/CristianaMirandadeFarias" class="text-indigo-600">Website</a></p>
+          <p class="mt-3 text-sm"><a href="mailto:cristiana.farias@tu-darmstadt.de" class="text-brand-600">Email</a> ·
+            <a href="https://www.ias.informatik.tu-darmstadt.de/Team/CristianaMirandadeFarias"
+              class="text-brand-600">Website</a>
+          </p>
         </article>
         <article class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6">
           <img src="assets/organizers/tim.jpg" alt="Tim Schneider" class="w-16 h-16 rounded-full object-cover" />
           <h3 class="mt-4 font-semibold">Tim Schneider</h3>
           <p class="text-sm text-slate-500">Intelligent Autonomous Systems (IAS), TU Darmstadt</p>
-          <p class="mt-3 text-sm"><a href="mailto:tim.schneider1@tu-darmstadt.de" class="text-indigo-600">Email</a> · <a href="https://www.ias.informatik.tu-darmstadt.de/Team/TimSchneider" class="text-indigo-600">Website</a></p>
+          <p class="mt-3 text-sm"><a href="mailto:tim.schneider1@tu-darmstadt.de" class="text-brand-600">Email</a> · <a
+              href="https://www.ias.informatik.tu-darmstadt.de/Team/TimSchneider" class="text-brand-600">Website</a>
+          </p>
         </article>
         <article class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6">
           <img src="assets/organizers/matias.jpg" alt="Matias Mattamala" class="w-16 h-16 rounded-full object-cover" />
           <h3 class="mt-4 font-semibold">Matias Mattamala</h3>
           <p class="text-sm text-slate-500">Centre for AI in Assistive Autonomy, University of Edinburgh</p>
-          <p class="mt-3 text-sm"><a href="mailto:matias.mattamala@ed.ac.uk" class="text-indigo-600">Email</a> · <a href="https://mmattamala.github.io/" class="text-indigo-600">Website</a></p>
+          <p class="mt-3 text-sm"><a href="mailto:matias.mattamala@ed.ac.uk" class="text-brand-600">Email</a> · <a
+              href="https://mmattamala.github.io/" class="text-brand-600">Website</a></p>
         </article>
         <article class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6">
           <img src="assets/organizers/russell.png" alt="Russell Buchanan" class="w-16 h-16 rounded-full object-cover" />
           <h3 class="mt-4 font-semibold">Russell Buchanan</h3>
           <p class="text-sm text-slate-500">RIPL Lab, University of Waterloo</p>
-          <p class="mt-3 text-sm"><a href="mailto:russell.buchanan@uwaterloo.ca" class="text-indigo-600">Email</a> · <a href="https://www.ripl-lab.com/people" class="text-indigo-600">Website</a></p>
+          <p class="mt-3 text-sm"><a href="mailto:russell.buchanan@uwaterloo.ca" class="text-brand-600">Email</a> · <a
+              href="https://www.ripl-lab.com/people" class="text-brand-600">Website</a></p>
         </article>
         <article class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6">
           <img src="assets/organizers/roberto.jpg" alt="Roberto Calandra" class="w-16 h-16 rounded-full object-cover" />
           <h3 class="mt-4 font-semibold">Roberto Calandra</h3>
           <p class="text-sm text-slate-500">LASR Lab, TU Dresden</p>
-          <p class="mt-3 text-sm"><a href="mailto:roberto.calandra@tu-dresden.de" class="text-indigo-600">Email</a> · <a href="https://www.robertocalandra.com/" class="text-indigo-600">Website</a></p>
+          <p class="mt-3 text-sm"><a href="mailto:roberto.calandra@tu-dresden.de" class="text-brand-600">Email</a> · <a
+              href="https://www.robertocalandra.com/" class="text-brand-600">Website</a></p>
         </article>
       </div>
-      <h3 class="mt-12 text-2xl font-semibold">Advisory Board</h3>
+      <h3 class="mt-12 text-3xl font-semibold">Advisory Board</h3>
       <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-2 gap-6">
         <article class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6">
-          <img src="assets/organizers/ram.jpg" alt="Subramanian Ramamoorthy" class="w-16 h-16 rounded-full object-cover" />
+          <img src="assets/organizers/ram.jpg" alt="Subramanian Ramamoorthy"
+            class="w-16 h-16 rounded-full object-cover" />
           <h4 class="font-semibold">Subramanian Ramamoorthy</h4>
           <p class="text-sm text-slate-500">Centre for AI in Assistive Autonomy, University of Edinburgh</p>
         </article>
@@ -363,21 +578,28 @@
   </section>
 
   <!-- Registration / Venue -->
-  <section id="register" class="py-20 bg-slate-50 dark:bg-slate-900/30 border-y border-slate-200 dark:border-slate-800">
+  <section id="register" class="py-20 bg-slate-50 dark:bg-slate-900/30 border-y border-slate-200 dark:border-slate-800"
+    data-aos="fade-up">
     <div class="max-w-5xl mx-auto px-4">
-      <h2 class="text-3xl font-bold">Participation & Venue</h2>
+      <h2 class="text-4xl font-bold">Participation & Venue</h2>
       <div class="mt-6 grid md:grid-cols-2 gap-6">
         <div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6">
           <h3 class="font-semibold">Registration</h3>
-          <p class="mt-2 text-sm">Please register via the main ICRA 2026 registration system. A workshop add-on may be required.</p>
-          <a href="#" class="mt-4 inline-flex items-center rounded-full px-5 py-3 bg-indigo-600 text-white hover:bg-indigo-700">ICRA Registration</a>
+          <p class="mt-2 text-sm">Please register via the main ICRA 2026 registration system. A workshop add-on may be
+            required.</p>
+          <a href="#"
+            class="mt-4 inline-flex items-center rounded-full px-5 py-3 bg-brand-600 text-white hover:bg-brand-700">ICRA
+            Registration</a>
           <p class="mt-3 text-xs text-slate-500">Livestream link will be posted here closer to the event.</p>
         </div>
         <div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6">
           <h3 class="font-semibold">Venue</h3>
-          <p class="mt-2 text-sm">Vienna, Austria · Conference center TBA. Room details will be updated after scheduling.</p>
-          <div class="mt-4 aspect-[16/9] w-full overflow-hidden rounded-xl border border-slate-200 dark:border-slate-800">
-            <iframe title="Map" src="https://maps.google.com/maps?q=Vienna&t=&z=11&ie=UTF8&iwloc=&output=embed" class="w-full h-full"></iframe>
+          <p class="mt-2 text-sm">Vienna, Austria · Conference center TBA. Room details will be updated after
+            scheduling.</p>
+          <div
+            class="mt-4 aspect-[16/9] w-full overflow-hidden rounded-xl border border-slate-200 dark:border-slate-800">
+            <iframe title="Map" src="https://maps.google.com/maps?q=Vienna&t=&z=11&ie=UTF8&iwloc=&output=embed"
+              class="w-full h-full"></iframe>
           </div>
         </div>
       </div>
@@ -385,22 +607,59 @@
   </section>
 
   <!-- FAQ -->
-  <section id="faq" class="py-20">
+  <section id="faq" class="py-20" data-aos="fade-up">
     <div class="max-w-4xl mx-auto px-4">
-      <h2 class="text-3xl font-bold">FAQ</h2>
-      <div class="mt-6 divide-y divide-slate-200 dark:divide-slate-800 rounded-2xl border border-slate-200 dark:border-slate-800">
+      <h2 class="text-4xl font-bold">FAQ</h2>
+      <div
+        class="mt-6 divide-y divide-slate-200 dark:divide-slate-800 rounded-2xl border border-slate-200 dark:border-slate-800">
         <details class="group p-6">
-          <summary class="flex cursor-pointer list-none items-center justify-between"><span class="font-medium">Are there archival proceedings?</span><span class="transition-transform group-open:rotate-45 text-xl">＋</span></summary>
-          <p class="mt-3 text-sm text-slate-600 dark:text-slate-300">No. Authors retain the right to submit to journals/conferences later.</p>
+          <summary class="flex cursor-pointer list-none items-center justify-between"><span class="font-medium">Are
+              there archival proceedings?</span><span class="transition-transform group-open:rotate-45 text-xl">＋</span>
+          </summary>
+          <p class="mt-3 text-sm text-slate-600 dark:text-slate-300">No. Authors retain the right to submit to
+            journals/conferences later.</p>
         </details>
         <details class="group p-6">
-          <summary class="flex cursor-pointer list-none items-center justify-between"><span class="font-medium">Is double-blind review used?</span><span class="transition-transform group-open:rotate-45 text-xl">＋</span></summary>
-          <p class="mt-3 text-sm text-slate-600 dark:text-slate-300">Yes, for contributed abstracts. Invited talks are not reviewed.</p>
+          <summary class="flex cursor-pointer list-none items-center justify-between"><span class="font-medium">Is
+              single-blind review used?</span><span class="transition-transform group-open:rotate-45 text-xl">＋</span>
+          </summary>
+          <p class="mt-3 text-sm text-slate-600 dark:text-slate-300">Yes, for contributed abstracts.</p>
         </details>
         <details class="group p-6">
-          <summary class="flex cursor-pointer list-none items-center justify-between"><span class="font-medium">Will there be streaming?</span><span class="transition-transform group-open:rotate-45 text-xl">＋</span></summary>
-          <p class="mt-3 text-sm text-slate-600 dark:text-slate-300">Yes. The full event will be live-streamed; remote Q&A moderation provided.</p>
+          <summary class="flex cursor-pointer list-none items-center justify-between"><span class="font-medium">Will
+              there be streaming?</span><span class="transition-transform group-open:rotate-45 text-xl">＋</span>
+          </summary>
+          <p class="mt-3 text-sm text-slate-600 dark:text-slate-300">Yes. The full event will be live-streamed; remote
+            Q&A moderation provided.</p>
         </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Supported By -->
+  <section id="supporters" class="py-20 border-t border-slate-200 dark:border-slate-800" data-aos="fade-up">
+    <div class="max-w-5xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold text-slate-400 uppercase tracking-widest text-sm mb-10">Supported By</h2>
+      <div
+        class="flex flex-wrap items-center justify-center gap-12 grayscale hover:grayscale-0 transition-all duration-500 opacity-60 hover:opacity-100">
+        <!-- TU Darmstadt -->
+        <img src="assets/uni_logos/tuda_logo-1.png" alt="TU Darmstadt"
+          class="h-16 w-auto object-contain mix-blend-multiply dark:mix-blend-screen" />
+
+        <!-- IAS -->
+        <img src="assets/uni_logos/ias_logo-1.png" alt="Intelligent Autonomous Systems"
+          class="h-16 w-auto object-contain mix-blend-multiply dark:mix-blend-screen" />
+
+        <!-- University of Edinburgh -->
+        <img src="assets/uni_logos/uni_edimbourg.jpeg" alt="University of Edinburgh"
+          class="h-16 w-auto object-contain mix-blend-multiply dark:mix-blend-screen" />
+        <img src="assets/uni_logos/uni_edim_centre_for_aI.jpeg" alt="Centre for AI"
+          class="h-16 w-auto object-contain mix-blend-multiply dark:mix-blend-screen" />
+
+        <!-- University of Waterloo / RIPL -->
+        <img src="assets/uni_logos/UniversityOfWaterloo_logo_vert_rgb.jpg" alt="University of Waterloo"
+          class="h-16 w-auto object-contain mix-blend-multiply dark:mix-blend-screen" />
+        <img src="assets/uni_logos/RIPL.png" alt="RIPL Lab" class="h-12 w-auto object-contain" />
       </div>
     </div>
   </section>
@@ -412,7 +671,8 @@
       <div class="flex items-center gap-4 text-sm">
         <a href="#cfp" class="hover:underline">CFP</a>
         <a href="#register" class="hover:underline">Registration</a>
-        <a href="https://github.com/active-perception-workshop/active-perception-workshop.github.io" class="hover:underline">GitHub</a>
+        <a href="https://github.com/active-perception-workshop/active-perception-workshop.github.io"
+          class="hover:underline">GitHub</a>
         <a href="#" class="hover:underline">Code of Conduct</a>
       </div>
     </div>
@@ -441,5 +701,16 @@
     themeToggle?.addEventListener('click', () => setTheme(!document.documentElement.classList.contains('dark')));
   </script>
 
+  <!-- AOS Animation Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      once: true,
+      offset: 50,
+      duration: 800,
+      easing: 'ease-out-cubic',
+    });
+  </script>
 </body>
+
 </html>
