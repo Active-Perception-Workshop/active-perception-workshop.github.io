@@ -61,7 +61,7 @@
           }
         }
       },
-      darkMode: 'class'
+      // darkMode: 'class' // Removed night mode
     }
   </script>
   <!-- Favicon (replace) -->
@@ -151,10 +151,7 @@
           <a href="#faq" class="hover:text-brand-600">FAQ</a>
           <a href="#register"
             class="inline-flex items-center rounded-full px-4 py-2 bg-brand-600 text-white hover:bg-brand-700">Register</a>
-          <button id="theme-toggle" aria-label="Toggle dark mode"
-            class="p-2 rounded-lg border border-slate-200 dark:border-slate-800">
-            <span id="theme-icon">🌙</span>
-          </button>
+          <!-- Night mode toggle removed -->
         </nav>
         <button id="menu" class="md:hidden p-2 rounded-lg border border-slate-200 dark:border-slate-800"
           aria-label="Open menu">☰</button>
@@ -314,6 +311,13 @@
           <p class="mt-3 text-sm">. <a href="https://people.csiro.au/b/t/tirtha-bandy"
               class="text-brand-600">Website</a></p>
         </article>
+        <article
+          class="group relative overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-800 p-6 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 bg-white dark:bg-slate-900/50 hover:bg-white/80 dark:hover:bg-slate-800/80">
+          <img src="assets/speakers/nathan.jpg" alt="Nathan Lepora" class="w-24 h-24 rounded-full object-cover" />
+          <h3 class="mt-4 text-xl font-semibold">Nathan Lepora</h3>
+          <p class="text-sm text-slate-500">University of Bristol / BRL</p>
+          <p class="mt-3 text-sm"> <a href="https://lepora.com/" class="text-brand-600">Website</a></p>
+        </article>
       </div>
     </div>
   </section>
@@ -346,8 +350,7 @@
             <div class="h-10 w-10 rounded-full bg-brand-600 text-white flex items-center justify-center">🏆</div>
             <div>
               <div class="font-medium">Awards</div>
-              <div class="text-sm text-slate-500">Best Paper, Best Poster/Presentation, Best Video (with certificates &
-                prizes)</div>
+              <div class="text-sm text-slate-500">Best Paper</div>
             </div>
           </li>
           </li>
@@ -565,21 +568,23 @@
         </article>
       </div>
       <h3 class="mt-12 text-3xl font-semibold">Advisory Board</h3>
-      <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-2 gap-6">
+      <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         <article
           class="group relative overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-800 p-6 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 bg-white dark:bg-slate-900/50 hover:bg-white/80 dark:hover:bg-slate-800/80">
           <img src="assets/organizers/ram.jpg" alt="Subramanian Ramamoorthy"
             class="w-24 h-24 rounded-full object-cover" />
           <h3 class="mt-4 text-xl font-semibold">Subramanian Ramamoorthy</h3>
           <p class="text-sm text-slate-500">Centre for AI in Assistive Autonomy, University of Edinburgh</p>
-          <p class="mt-3 text-sm"><a href="https://www.edinburgh-robotics.org/academics/subramanian-ramamoorthy" class="text-brand-600">Website</a></p>
+          <p class="mt-3 text-sm"><a href="https://www.edinburgh-robotics.org/academics/subramanian-ramamoorthy"
+              class="text-brand-600">Website</a></p>
         </article>
         <article
           class="group relative overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-800 p-6 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 bg-white dark:bg-slate-900/50 hover:bg-white/80 dark:hover:bg-slate-800/80">
           <img src="assets/organizers/jan.jpg" alt="Jan Peters" class="w-24 h-24 rounded-full object-cover" />
           <h3 class="mt-4 text-xl font-semibold">Jan Peters</h3>
           <p class="text-sm text-slate-500">Intelligent Autonomous Systems (IAS), TU Darmstadt</p>
-          <p class="mt-3 text-sm"><a href="https://www.ias.informatik.tu-darmstadt.de/Team/JanPeters" class="text-brand-600">Website</a></p>
+          <p class="mt-3 text-sm"><a href="https://www.ias.informatik.tu-darmstadt.de/Team/JanPeters"
+              class="text-brand-600">Website</a></p>
         </article>
       </div>
     </div>
@@ -595,7 +600,7 @@
           <h3 class="font-semibold">Registration</h3>
           <p class="mt-2 text-sm">Please register via the main ICRA 2026 registration system. A workshop add-on may be
             required.</p>
-          <a href="https://2026.ieee-icra.org/" target="_blank" rel="noopener noreferrer"
+          <a href="https://2026.ieee-icra.org/attend/" target="_blank" rel="noopener noreferrer"
             class="mt-4 inline-flex items-center rounded-full px-5 py-3 bg-brand-600 text-white hover:bg-brand-700">ICRA
             Registration</a>
           <p class="mt-3 text-xs text-slate-500">Livestream link will be posted here closer to the event.</p>
@@ -606,7 +611,8 @@
             scheduling.</p>
           <div
             class="mt-4 aspect-[16/9] w-full overflow-hidden rounded-xl border border-slate-200 dark:border-slate-800">
-            <iframe title="Map" src="https://maps.google.com/maps?q=Vienna&t=&z=11&ie=UTF8&iwloc=&output=embed"
+            <iframe title="Map"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5316.901858873495!2d16.4090272!3d48.217191!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476d0719a2fc3957%3A0x51b94dc6a5158516!2sVIECON%20-%20Vienna%20Congress%20%26%20Convention%20Center%20(Messe%20Wien)!5e0!3m2!1sde!2sde!4v1770645775036!5m2!1sde!2sde"
               class="w-full h-full"></iframe>
           </div>
         </div>
@@ -652,22 +658,29 @@
         class="flex flex-wrap items-center justify-center gap-12 grayscale hover:grayscale-0 transition-all duration-500 opacity-60 hover:opacity-100">
         <!-- TU Darmstadt -->
         <img src="assets/uni_logos/tuda_logo-1.png" alt="TU Darmstadt"
-          class="h-10 w-auto object-contain mix-blend-multiply dark:mix-blend-screen" />
+          class="h-12 max-w-[180px] w-auto object-contain mix-blend-multiply" />
 
         <!-- IAS -->
         <img src="assets/uni_logos/ias_logo-1.png" alt="Intelligent Autonomous Systems"
-          class="h-12 w-auto object-contain mix-blend-multiply dark:mix-blend-screen" />
+          class="h-12 max-w-[180px] w-auto object-contain mix-blend-multiply" />
 
         <!-- University of Edinburgh -->
         <img src="assets/uni_logos/uni_edimbourg.jpeg" alt="University of Edinburgh"
-          class="h-14 w-auto object-contain mix-blend-multiply dark:mix-blend-screen" />
+          class="h-12 max-w-[180px] w-auto object-contain mix-blend-multiply" />
         <img src="assets/uni_logos/uni_edim_centre_for_aI.jpeg" alt="Centre for AI"
-          class="h-16 w-auto object-contain mix-blend-multiply dark:mix-blend-screen" />
+          class="h-12 max-w-[180px] w-auto object-contain mix-blend-multiply" />
 
         <!-- University of Waterloo / RIPL -->
-        <img src="assets/uni_logos/UniversityOfWaterloo_logo_vert_rgb.jpg" alt="University of Waterloo"
-          class="h-14 w-auto object-contain mix-blend-multiply dark:mix-blend-screen" />
-        <img src="assets/uni_logos/RIPL.png" alt="RIPL Lab" class="h-10 w-auto object-contain" />
+        <img src="assets/uni_logos/UniversityOfWaterloo_logo_vert_rgb.jpeg" alt="University of Waterloo"
+          class="h-16 max-w-[180px] w-auto object-contain mix-blend-multiply" />
+        <img src="assets/uni_logos/RIPL.png" alt="RIPL Lab"
+          class="h-12 max-w-[180px] w-auto object-contain mix-blend-multiply" />
+
+        <!-- TU Dresden / LASR -->
+        <img src="assets/uni_logos/las.png" alt="LASR Lab"
+          class="h-12 max-w-[180px] w-auto object-contain mix-blend-multiply" />
+        <img src="assets/uni_logos/tu-dresden.png" alt="TU Dresden"
+          class="h-12 max-w-[180px] w-auto object-contain mix-blend-multiply" />
       </div>
     </div>
   </section>
@@ -676,7 +689,8 @@
   <footer class="py-10 border-t border-slate-200 dark:border-slate-800">
     <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6">
       <p class="text-sm">© <span id="year"></span> Act to Sense to Act Better</p>
-      <a href="https://www.tu-darmstadt.de/impressum/index.de.jsp" class="text-sm hover:underline" target="_blank" rel="noopener noreferrer">Impressum</a>
+      <a href="https://www.tu-darmstadt.de/impressum/index.de.jsp" class="text-sm hover:underline" target="_blank"
+        rel="noopener noreferrer">Impressum</a>
     </div>
   </footer>
 
@@ -690,17 +704,7 @@
     const mobileMenu = document.getElementById('mobileMenu');
     menuBtn?.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
 
-    // Theme toggle (persist to localStorage)
-    const themeToggle = document.getElementById('theme-toggle');
-    const themeIcon = document.getElementById('theme-icon');
-    function setTheme(dark) {
-      const root = document.documentElement;
-      if (dark) { root.classList.add('dark'); localStorage.setItem('theme', 'dark'); themeIcon.textContent = '☀️'; }
-      else { root.classList.remove('dark'); localStorage.setItem('theme', 'light'); themeIcon.textContent = '🌙'; }
-    }
-    // init
-    setTheme(localStorage.getItem('theme') === 'dark');
-    themeToggle?.addEventListener('click', () => setTheme(!document.documentElement.classList.contains('dark')));
+    // Theme toggle removed
   </script>
 
   <!-- AOS Animation Script -->
