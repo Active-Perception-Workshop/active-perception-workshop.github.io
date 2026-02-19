@@ -128,7 +128,7 @@
   <!-- Top Announcement Bar (optional) -->
   <div class="bg-brand-600 text-white text-sm">
     <div class="max-w-7xl mx-auto px-4 py-2 text-center">
-      <strong>Call for Papers is open</strong> — Deadline: <span id="cfp-deadline">March 21, 2026</span>
+      <strong>Call for Papers is open</strong> — Deadline: <span id="cfp-deadline">March 21, 2026 (AoE)</span>
     </div>
   </div>
 
@@ -368,7 +368,7 @@
             <div class="h-10 w-10 rounded-full bg-brand-600 text-white flex items-center justify-center">⏳</div>
             <div>
               <div class="font-medium">Submission Deadline</div>
-              <div class="text-sm text-slate-500 font-semibold text-brand-600">March 21, 2026</div>
+              <div class="text-sm text-slate-500 font-semibold text-brand-600">March 21, 2026 (AoE)</div>
             </div>
           </li>
         </ul>
@@ -500,22 +500,112 @@
    Call for Papers -->
   <section id="cfp" class="py-20 bg-slate-50 dark:bg-slate-900/30 border-y border-slate-200 dark:border-slate-800"
     data-aos="fade-up">
-    <div class="max-w-4xl mx-auto px-4 text-center">
-      <h2 class="text-4xl font-bold">Call for Participation</h2>
-      <p class="mt-6 text-lg text-slate-600 dark:text-slate-300">
-        We invite submissions for the active perception workshop.
-      </p>
-      <div class="mt-8 flex flex-col items-center gap-4">
-        <p class="text-xl font-medium text-brand-600">Submission Period: <span
-            class="text-slate-800 dark:text-white">Feb 6 — March 21, 2026</span></p>
-        <a href="https://openreview.net/group?id=IEEE.org/ICRA/2026/Workshop/ASAB&referrer=%5BHomepage%5D(%2F)"
-          class="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-brand-600 text-white font-semibold hover:bg-brand-700 hover:scale-105 transition-all shadow-lg hover:shadow-brand-500/25">
-          Submit via OpenReview
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-          </svg>
-        </a>
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold font-display">Call for Papers</h2>
+        <p class="mt-4 text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+          We invite high-quality submissions on all aspects of active perception in robotics, with a particular focus on
+          manipulation and learning.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-12 text-left">
+        <!-- Topics -->
+        <div class="space-y-6">
+          <h3 class="text-2xl font-bold flex items-center gap-2">
+            <span class="p-2 rounded-lg bg-brand-100 text-brand-600 dark:bg-brand-900/30">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z">
+                </path>
+              </svg>
+            </span>
+            Topics of Interest include (but are not limited to):
+          </h3>
+          <ul class="grid grid-cols-1 gap-3 text-slate-700 dark:text-slate-300">
+            <li class="flex items-start gap-2">
+              <span class="text-brand-600 mt-1">▹</span>
+              <span>Multi-Modal Perception (Tactile, Vision, Sound, etc.)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-brand-600 mt-1">▹</span>
+              <span>Learning Representations for (inter)Active Perception</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-brand-600 mt-1">▹</span>
+              <span>Uncertainty-Aware Control and Information Gain</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-brand-600 mt-1">▹</span>
+              <span>Active System Identification and State Estimation</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-brand-600 mt-1">▹</span>
+              <span>Re-grasping strategies</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-brand-600 mt-1">▹</span>
+              <span>Active shape estimation</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Instructions -->
+        <div class="space-y-6">
+          <h3 class="text-2xl font-bold flex items-center gap-2">
+            <span class="p-2 rounded-lg bg-purple-100 text-purple-600 dark:bg-purple-900/30">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.168.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.168.477-4.5 1.253">
+                </path>
+              </svg>
+            </span>
+            Submission Guidelines
+          </h3>
+          <div class="space-y-4 text-slate-700 dark:text-slate-300">
+            <p>We invite submissions of <strong>extended abstracts (up to 2 pages)</strong> excluding references. All
+              papers must be in PDF and follow the <strong>ICRA double column format</strong>.</p>
+            <p>Templates are available <a href="https://ras.papercept.net/conferences/support/support.php"
+                target="_blank" rel="noopener noreferrer" class="text-brand-600 hover:underline">here</a>.</p>
+            <p>All submissions will undergo a <strong>single-blind peer review</strong> process (via open review).
+              Accepted papers will be presented at the workshop as posters.</p>
+            <div class="pt-4 flex flex-col items-start gap-4">
+              <div class="flex flex-col gap-1">
+                <p class="font-medium text-brand-600">Deadline: March 21, 2026 (AoE)</p>
+                <!-- Countdown Timer -->
+                <div id="countdown" class="flex gap-3 text-center mt-1">
+                  <div class="flex flex-col">
+                    <span id="days" class="text-2xl font-bold text-slate-900 dark:text-white">00</span>
+                    <span class="text-[10px] uppercase tracking-wider text-slate-500">Days</span>
+                  </div>
+                  <div class="text-2xl font-bold text-slate-300">:</div>
+                  <div class="flex flex-col">
+                    <span id="hours" class="text-2xl font-bold text-slate-900 dark:text-white">00</span>
+                    <span class="text-[10px] uppercase tracking-wider text-slate-500">Hrs</span>
+                  </div>
+                  <div class="text-2xl font-bold text-slate-300">:</div>
+                  <div class="flex flex-col">
+                    <span id="minutes" class="text-2xl font-bold text-slate-900 dark:text-white">00</span>
+                    <span class="text-[10px] uppercase tracking-wider text-slate-500">Min</span>
+                  </div>
+                  <div class="text-2xl font-bold text-slate-300">:</div>
+                  <div class="flex flex-col">
+                    <span id="seconds" class="text-2xl font-bold text-slate-900 dark:text-white">00</span>
+                    <span class="text-[10px] uppercase tracking-wider text-slate-500">Sec</span>
+                  </div>
+                </div>
+              </div>
+              <a href="https://openreview.net/group?id=IEEE.org/ICRA/2026/Workshop/ASAB"
+                class="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-brand-600 text-white font-semibold hover:bg-brand-700 hover:scale-105 transition-all shadow-lg hover:shadow-brand-500/25">
+                Submit via OpenReview
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -716,7 +806,34 @@
     const mobileMenu = document.getElementById('mobileMenu');
     menuBtn?.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
 
-    // Theme toggle removed
+    // Countdown Timer (Deadline: March 21, 2026 23:59:59 AoE -> March 22, 2026 11:59:59 UTC)
+    const countdownDate = new Date("2026-03-22T11:59:59Z").getTime();
+    const countdownElement = document.getElementById('countdown');
+
+    if (countdownElement) {
+      const updateCountdown = () => {
+        const now = new Date().getTime();
+        const distance = countdownDate - now;
+
+        if (distance < 0) {
+          countdownElement.innerHTML = "<p class='text-brand-600 font-bold'>Submissions Closed</p>";
+          return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("days").innerText = String(days).padStart(2, '0');
+        document.getElementById("hours").innerText = String(hours).padStart(2, '0');
+        document.getElementById("minutes").innerText = String(minutes).padStart(2, '0');
+        document.getElementById("seconds").innerText = String(seconds).padStart(2, '0');
+      };
+
+      setInterval(updateCountdown, 1000);
+      updateCountdown();
+    }
   </script>
 
   <!-- AOS Animation Script -->
